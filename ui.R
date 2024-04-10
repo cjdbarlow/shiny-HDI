@@ -2,6 +2,12 @@ library(shiny)
 
 # Define UI for application that draws a histogram
 fluidPage(
+  # Load iframe resizer app
+  tags$head(
+    tags$script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.contentWindow.min.js",
+                type="text/javascript")
+  ),
+  
   
   # Load custom CSS
   includeCSS("bayes.css"),
@@ -154,4 +160,6 @@ fluidPage(
   helpText(HTML("Example data from: Pearse RM, Harrison DA, MacDonald N, Gillies MA, Blunt M, Ackland G, et al. <em>Effect of a Perioperative, Cardiac Output–Guided Hemodynamic Therapy Algorithm on Outcomes Following Major Gastrointestinal Surgery: A Randomized Clinical Trial and Systematic Review</em>. JAMA. 2014 Jun 4;311(21):2181. 
 <a href=\"https://jamanetwork.com/journals/jama/fullarticle/1873985\">https://doi.org/10.1001/jama.2014.5305</a>.
 ")),
+
+  HTML('<div data-iframe-height></div>')
 )
